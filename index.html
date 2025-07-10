@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <main>
+      <div class="filter-container">
+        <div class="form-group">
+          <label for="">Sort by:</label>
+          <select id="sortingInput">
+            <option value="">Select</option>
+            <option value="asc">A to Z</option>
+            <option value="desc">Z to A</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="priceSortInput">Price:</label>
+          <select id="priceSortInput">
+            <option value="">Sort by price</option>
+            <option value="asc">Price: Low to High</option>
+            <option value="desc">Price: High to Low</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="selectCategory">Category:</label>
+          <select id="selectCategory">
+            <option value="">Select</option>
+          </select>
+        </div>
+      </div>
+      <div class="container">
+        <h2>Product List</h2>
+        <div class="card-content" id="productList"></div>
+      </div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
