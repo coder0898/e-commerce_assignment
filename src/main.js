@@ -60,9 +60,9 @@ function sortAndDisplay(
 
   //filter by price
   if (sortPrice && sortPriceOrder == "asc") {
-    sortedData.sort((a, b) => a.price - b.price);
+    sortedData.sort((a, b) => a.product_price - b.product_price);
   } else if (sortPrice && sortPriceOrder == "desc") {
-    sortedData.sort((a, b) => b.price - a.price);
+    sortedData.sort((a, b) => b.product_price - a.product_price);
   }
 
   // filter by category
@@ -88,23 +88,32 @@ function sortAndDisplay(
 function renderProducts(products) {
   const fragment = document.createDocumentFragment();
 
-  products.forEach(({ image_url, product_name, price, stock_status }) => {
-    const card = document.createElement("div");
-    card.className = "card";
+  products.forEach(
+    ({
+      product_id,
+      product_image,
+      product_name,
+      product_price,
+      stock_status,
+    }) => {
+      const card = document.createElement("div");
+      card.className = "card";
 
-    card.innerHTML = `
-      <img src="${image_url}" alt="${product_name}" />
+      card.innerHTML = `
+      <img src="${product_image}" alt="${product_name}" />
       <div class="card-body">
         <h3>${product_name}</h3>
-        <p>&#8377; ${price}</p>
+        <p>&#8377; ${product_price}</p>
         <p style="color: ${
           stock_status === "in stock" ? "green" : "red"
         };">${stock_status}</p>
       </div>
+      <button id='addCart' data-id=${product_id}><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
     `;
 
-    fragment.appendChild(card);
-  });
+      fragment.appendChild(card);
+    }
+  );
 
   productList.appendChild(fragment);
 }
