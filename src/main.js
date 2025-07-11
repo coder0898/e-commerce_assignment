@@ -108,7 +108,7 @@ function renderProducts(products) {
           stock_status === "in stock" ? "green" : "red"
         };">${stock_status}</p>
       </div>
-      <button id='addCart' data-id=${product_id}><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+      <button id='viewProduct' data-id=${product_id}><i class="fa-solid fa-eye"></i> Learn More</button>
     `;
 
       fragment.appendChild(card);

@@ -11,6 +11,33 @@ body {
   color: #333;
 }
 
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.logo{
+  margin-left: 10px;
+}
+
+.logo h1{
+  color: #007FFF;
+  font-weight: 700;
+}
+
+.cart-content{
+  margin-right: 15px;
+  font-size: 1.5rem;
+  color: #007FFF;
+}
+
+.card-content span{
+  font-weight: 700;
+}
+
 main {
   padding: 20px;
   width: 100%;
@@ -102,14 +129,14 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color:#FFBF00;
+  background-color:#00B9E8;
   color: #fff;
   cursor: pointer;
   transition: all .4s ease-in-out;
 }
 
 button:hover {
-  background-color: #FFD700;
+  background-color: #007FFF;
 }
 
 /* ------------------ Responsive Tweaks ------------------ */
